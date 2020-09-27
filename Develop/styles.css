@@ -1,0 +1,41 @@
+body {
+    background-color: plum;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.container  {
+    background-color: white;
+    height: 400px;
+    width: 600px;
+    border: solid hotpink 10px;
+    border-radius: 10%;
+    margin-top: 5rem;
+    padding: 3rem;
+}
+h1 {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+p {
+    text-align: center;
+    line-height: 25px;
+}
+.button-container {
+    text-align: center;
+}
+.start-button {
+    margin-bottom: 3rem;
+    background-color: indigo;
+    color: white;
+    padding: 20px;
+    border-radius: 10%;
+}
+.answer-button {
+    margin-bottom: 10px;
+    background-color: indigo;
+    color: white;
+    border-radius: 10%;
+    height: 50px;
+}
+#question-form {
+    display: none;
+}
