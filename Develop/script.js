@@ -8,8 +8,12 @@ var answerOne = document.getElementById("answer1")
 var answerTwo = document.getElementById("answer2")
 var answerThree = document.getElementById("answer3")
 var answerFour = document.getElementById("answer4")
-var results = document.getElementById("")
+var correct = document.getElementById("correct")
+var wrong = document.getElementById("wrong")
+var next = document.getElementById("next-container")
+var currentQuestion;
 var score = 0
+
 
 var questions = [{
     question: "Who invented Java?",
@@ -51,9 +55,14 @@ startButton.addEventListener('click', function(){
 });
 
 function setNextQuestion(){
+    for (var i=0; i<questions.length; i++){
     showQuestion(questions[currentQuestion])
     showAnswers()
+    }
 }
+next.addEventListener('click', function(){
+    setNextQuestion()
+});
 
 function showQuestion(question, questionContainer) {
     questionElement.innerText = question.question
@@ -71,36 +80,50 @@ function showAnswers() {
     }
 }
 
-
-
-// var answers = [answerOne, answerTwo, answerThree, answerFour];
-// answers.addEventListener('click', function(){
-//     console.log("hi there")
-// }
-
-// function selectAnswer(){
-
-// }
-// answerChosen = "" 
-
 answerOne.addEventListener('click', function(){
-    
+    if (questions[currentQuestion].choices[0] === questions[currentQuestion].correctAnswer)
+    {
+        correct.style.display = "block"
+        next.style.display = "block"
+        score ++
+    } else {
+        wrong.style.display = "block"
+        next.style.display = "block"
+    }
 });
 answerTwo.addEventListener('click', function(){
-    console.log ("hi there")
+    if (questions[currentQuestion].choices[1] === questions[currentQuestion].correctAnswer)
+    {
+        correct.style.display = "block"
+        next.style.display = "block"
+        score ++
+    } else {
+        wrong.style.display = "block"
+        next.style.display = "block"
+    }
    
 });
 answerThree.addEventListener('click', function(){
-    console.log ("hi there")
+    if (questions[currentQuestion].choices[2] === questions[currentQuestion].correctAnswer)
+    {
+        correct.style.display = "block"
+        next.style.display = "block"
+        score ++
+    } else {
+        wrong.style.display = "block"
+        next.style.display = "block"
+    }
    
 });
 answerFour.addEventListener('click', function(){
-    console.log ("hi there")
-    
+    if (questions[currentQuestion].choices[3] === questions[currentQuestion].correctAnswer)
+    {
+        correct.style.display = "block"
+        next.style.display = "block"
+        score ++
+    } else {
+        wrong.style.display = "block"
+        next.style.display = "block"
+    }
 });
 
-// if (answerChosen=correctAnswer){
-//     results = "Correct!"
-// } else {
-//     results = "Wrong!"
-// }

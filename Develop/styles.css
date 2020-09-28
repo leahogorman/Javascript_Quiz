@@ -46,3 +46,34 @@ p {
 #question-form {
     display: none;
 }
+.correct, .wrong {
+    display: none;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 20px;
+}
+.correct {
+    background-color: lime;
+}
+.wrong {
+background-color: plum;
+}
+.next-container {
+    text-align: center;
+    display: none;
+}
+.next-button {
+    margin-top: 20px;
+    background-color:rebeccapurple;
+    color: white;
+    height: 100px;
+    width: 100px;
+    border: none;
+    font-weight: bold;
+    font-size: 30px;
+    border-radius: 50%;
+
+}
