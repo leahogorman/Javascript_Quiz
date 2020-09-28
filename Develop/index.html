@@ -13,9 +13,11 @@
         <h1>
             Javascript Quiz
         </h1>
-        <p>
-            Welcome to the Javascript Quiz. Once you start the game you will be presented with questions. You must answer them before the time runs out! 
-            <br>
+        <p class="welcome">
+            Welcome to the Javascript Quiz. 
+            <br>Once you start, you will be presented with questions.
+            <br>You must answer them before the time runs out! 
+            <br><br>
             Good Luck!
         </p>
         <div class="button-container">
@@ -23,7 +25,11 @@
         </div>
     </div>
     <div class="container" id="question-form">
-            <div class="question" id="question"></div> <br><br>
+            <div class="row">
+                <div id="timer" class="col-6"></div>
+                <div id="score" class="col-6"></div>
+            </div>
+            <div class="question" id="question"></div> <br>
             <div class="answer">
                 <div class="row">
                     <div class="col-6">
@@ -49,6 +55,16 @@
     </div>
     <div class="next-container" id="next-container">
     <button class="next-button" id="next-button" type="button">NEXT</button>
+    </div>
+    <div class="container" id="end-form">
+        <h1>
+            GAME OVER!
+        </h1>
+        <p>
+            Thanks for playing!
+        </p>
+        <br>
+        <div id="end-score"></div>
     </div>
 <script src="script.js"></script>
 </body>
