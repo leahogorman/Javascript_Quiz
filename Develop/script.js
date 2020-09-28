@@ -73,15 +73,14 @@ startButton.addEventListener('click', function(){
 }
 });
 
-
-
 function setNextQuestion(){
     for (var i=0; i<questions.length; i++){
     showQuestion(questions[currentQuestion])
     showAnswers()
     scoreContainer.innerText = "Score: " + score
-    }
+    } 
 }
+
 nextButton.addEventListener('click', function(){
     setNextQuestion(currentQuestion++)
     correct.style.display = "none"
@@ -152,7 +151,15 @@ answerFour.addEventListener('click', function(){
     }
 });
 
-function endGame(){
-    
-}
+function triggerLast(){
+    if (currentQuestion = questions[5]) {
+        nextButton.addEventListener('click', function(){
+            endGame()
+});
 
+function endGame() {
+    questionContainer.style.display = "none";
+    endContainer.style.display = "block";
+    nextButton.style.display = "none"
+    endScore.innerText = "Your Score: " + score
+}
