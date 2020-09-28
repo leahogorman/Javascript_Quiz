@@ -29,21 +29,21 @@ var questions = [{
     choices: ["October" + 2010, "September" + 1995, "August" + 1884, "February" + 1993],
     correctAnswer: 1995
 }, {
-    question: "What is a string used for in Javascript?",
-    choices: ["to store a series of characters", "to store multiple groups of characters", "when called it performs a particular task", "I have no idea"],
-    correctAnswer: "to store a series of characters"
+    question: "Where was Java created?",
+    choices: ["Bell Labs", "Microsoft", "Netscape", "Sun Microsystems"],
+    correctAnswer: "Sun Microsystems"
+}, {
+    question: "Which is not an open source library?",
+    choices: ["jQuery", "Prototype", "Python", "MooTools"],
+    correctAnswer: "Python"
 }, {
     question: "What is not a primitive data types?",
     choices: ["A String", "A Boolean", "An Object ", "An Integer"],
     correctAnswer: "An Object"
 }, {
-    question: "What is not a primitive data types?",
-    choices: ["A String", "A Boolean", "An Object ", "An Integer"],
-    correctAnswer: "An Object"
-}, {
-    question: "What is the difference between let and const?",
-    choices: ["Nothing they can be used interchangeably", "They are both block scoped", "let variables can be updated, const can't", "const variables can be updated, let can't"],
-    correctAnswer: "let variables can be updated, const can't"
+    question: "Who invented the World Wide Web?",
+    choices: ["Vint Cerf", "Alan Turing", "Tim Berners-Lee", "Rosemary Leith"],
+    correctAnswer: "Tim Berners-Lee"
 }]
 
 
@@ -61,7 +61,9 @@ function setNextQuestion(){
     }
 }
 next.addEventListener('click', function(){
-    setNextQuestion()
+    setNextQuestion(currentQuestion++)
+    correct.style.display = "none"
+    wrong.style.display = "none"
 });
 
 function showQuestion(question, questionContainer) {
@@ -126,4 +128,3 @@ answerFour.addEventListener('click', function(){
         next.style.display = "block"
     }
 });
-
