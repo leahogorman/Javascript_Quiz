@@ -23,19 +23,35 @@
         </div>
     </div>
     <div class="container" id="question-form">
-            <div class="question" id="question"></div>
+            <div class="question" id="question"></div> <br><br>
             <div class="answer">
                 <div class="row">
-                    <button class="answer-button" id="answer1" type="button">Answer 1</button>
+                    <div class="col-6">
+                        <button class="answer-button" id="answer1" type="button">Answer 1</button>
+                    </div>
+                    <div class="col-6">
+                        <button class="answer-button" id="answer2" type="button">Answer 2</button>
+                    </div>
                 </div>
                 <div class="row">
-                    <button class="answer-button" id="answer2" type="button">Answer 2</button>
+                    <div class="col-6">
+                        <button class="answer-button" id="answer3" type="button">Answer 3</button>
+                    </div>
+                    <div class="col-6">
+                        <button class="answer-button" id="answer4" type="button">Answer 4</button>
+                    </div>
                 </div>
-                <div class="row">
-                    <button class="answer-button" id="answer3" type="button">Answer 3</button>
+            </div>
+            <div class="results">
+                <div class="result-right" hidden>
+                    <p>
+                        Correct!
+                    </p>
                 </div>
-                <div class="row">
-                    <button class="answer-button" id="answer4" type="button">Answer 4</button>
+                <div class="result-wrong" hidden>
+                    <p>
+                        Wrong!
+                    </p>
                 </div>
             </div>
         </div>
