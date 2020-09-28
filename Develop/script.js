@@ -15,7 +15,7 @@ var nextButton = document.getElementById("next-button")
 var currentQuestion;
 var scoreContainer = document.getElementById("score")
 var endScore = document.getElementById("end-score")
-var startingTime = .05;
+var startingTime = 1;
 var time = startingTime * 60;
 var timer = document.getElementById("timer");
 var score = 0;
@@ -58,10 +58,9 @@ startButton.addEventListener('click', function(){
     questionContainer.style.display = "block";
     currentQuestion = 0
     setNextQuestion()
-});
-
-setInterval(updateCountdown, 1000);
-function updateCountdown () {
+    updateCountdown()
+    setInterval(updateCountdown, 1000);
+    function updateCountdown () {
     let seconds = time % 60;
     timer.innerHTML = `Time Left: ${seconds}`;
     time--;
@@ -72,9 +71,11 @@ function updateCountdown () {
         endScore.innerText = "Your Score: " + score
     }
 }
+});
+
+
 
 function setNextQuestion(){
-    updateCountdown()
     for (var i=0; i<questions.length; i++){
     showQuestion(questions[currentQuestion])
     showAnswers()

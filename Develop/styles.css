@@ -1,7 +1,9 @@
 body {
+    /* background: linear-gradient(90deg, hotpink,plum, plum,hotpink); */
     background-color: plum;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
 .container  {
     background-color: white;
     height: 400px;
