@@ -14,14 +14,14 @@ var questionElement = document.getElementById("question")
 var correct = document.getElementById("correct")
 var wrong = document.getElementById("wrong")
 var currentQuestion;
-// Score Elements
-var score = 0;
-var endScore = document.getElementById("end-score")
-var scoreContainer = document.getElementById("score")
 // Timer Elements
 var startingTime = 1;
 var time = startingTime * 60;
 var timer = document.getElementById("timer");
+// Score Elements
+var score = 0;
+var endScore = document.getElementById("end-score")
+var scoreContainer = document.getElementById("score")
 
 // Questions Array
 var questions = [{
