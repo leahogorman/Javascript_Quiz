@@ -1,25 +1,29 @@
-var startButton = document.getElementById('start-button')
+// Containers Variables
 var questionContainer = document.getElementById('question-form')
 var startContainer = document.getElementById('start-form')
 var endContainer = document.getElementById("end-form")
-
-var questionElement = document.getElementById("question")
-// var answers = document.getElementById("answer-button")
+// Button Variables
+var startButton = document.getElementById('start-button')
 var answerOne = document.getElementById("answer1")
 var answerTwo = document.getElementById("answer2")
 var answerThree = document.getElementById("answer3")
 var answerFour = document.getElementById("answer4")
+var nextButton = document.getElementById("next-button")
+// Question Container Elements
+var questionElement = document.getElementById("question")
 var correct = document.getElementById("correct")
 var wrong = document.getElementById("wrong")
-var nextButton = document.getElementById("next-button")
 var currentQuestion;
-var scoreContainer = document.getElementById("score")
+// Score Elements
+var score = 0;
 var endScore = document.getElementById("end-score")
+var scoreContainer = document.getElementById("score")
+// Timer Elements
 var startingTime = 1;
 var time = startingTime * 60;
 var timer = document.getElementById("timer");
-var score = 0;
 
+// Questions Array
 var questions = [{
     question: "Who invented Java?",
     choices: [ "James Gosling", "Dennis Ritchie", "Brendan Eich", "Bjarne Stroustrup" ],
@@ -51,8 +55,7 @@ var questions = [{
     correctAnswer: "Tim Berners-Lee"
 }]
 
-
-
+// Start Button Event
 startButton.addEventListener('click', function(){
     startContainer.style.display = "none";
     questionContainer.style.display = "block";
@@ -73,25 +76,18 @@ startButton.addEventListener('click', function(){
 }
 });
 
+// Questions Functions
 function setNextQuestion(){
-    for (var i=0; i<questions.length; i++){
     showQuestion(questions[currentQuestion])
     showAnswers()
     scoreContainer.innerText = "Score: " + score
-    } 
+    endGame()
 }
-
-nextButton.addEventListener('click', function(){
-    setNextQuestion(currentQuestion++)
-    correct.style.display = "none"
-    wrong.style.display = "none"
-    nextButton.style.display = "none"
-});
-
 function showQuestion(question, questionContainer) {
     questionElement.innerText = question.question
 }
 
+// Connecting the Answer Options to Buttons
 function showAnswers() {
     var displayChoices = questions[currentQuestion].choices;
 
@@ -125,7 +121,6 @@ answerTwo.addEventListener('click', function(){
         wrong.style.display = "block";
         nextButton.style.display = "block";
     }
-   
 });
 answerThree.addEventListener('click', function(){
     if (questions[currentQuestion].choices[2] === questions[currentQuestion].correctAnswer)
@@ -137,7 +132,6 @@ answerThree.addEventListener('click', function(){
         wrong.style.display = "block";
         nextButton.style.display = "block";
     }
-   
 });
 answerFour.addEventListener('click', function(){
     if (questions[currentQuestion].choices[3] === questions[currentQuestion].correctAnswer)
@@ -151,15 +145,22 @@ answerFour.addEventListener('click', function(){
     }
 });
 
-function triggerLast(){
-    if (currentQuestion = questions[5]) {
-        nextButton.addEventListener('click', function(){
-            endGame()
+// Next Button Event
+nextButton.addEventListener('click', function(){
+    setNextQuestion(currentQuestion++)
+    correct.style.display = "none"
+    wrong.style.display = "none"
+    nextButton.style.display = "none"
 });
 
-function endGame() {
-    questionContainer.style.display = "none";
-    endContainer.style.display = "block";
-    nextButton.style.display = "none"
-    endScore.innerText = "Your Score: " + score
+// End Game Function
+function endGame(){
+if (currentQuestion === questions.length-1) {
+    nextButton.addEventListener('click', function(){ 
+        questionContainer.style.display = "none";
+        endContainer.style.display = "block";
+        nextButton.style.display = "none";
+        endScore.innerText = "Your Score: " + score;
+    })
+}
 }

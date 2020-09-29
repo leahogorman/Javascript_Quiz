@@ -9,27 +9,31 @@
 
 </head>
 <body>
+<!-- Start Form Container -->
     <div class="container" id="start-form">
         <h1>
             Javascript Quiz
         </h1>
-        <p class="welcome">
-            Welcome to the Javascript Quiz. 
-            <br>Once you start, you will be presented with questions.
-            <br>You must answer them before the time runs out! 
-            <br><br>
-            Good Luck!
-        </p>
+        <div class="paragraph">
+            <p>Welcome to the Javascript Quiz.</p> 
+            <p>Once you start, you will be presented with questions.</p>
+            <p>You must answer them before the time runs out!</p>
+            <div class="luck">Good Luck!</div>
+        </div>
+        
+<!-- Start Button -->
         <div class="button-container">
             <button class="start-button" id="start-button" type="button">Start Game!</button>
         </div>
     </div>
+<!-- Question Container -->
     <div class="container" id="question-form">
             <div class="row">
                 <div id="timer" class="col-6"></div>
                 <div id="score" class="col-6"></div>
             </div>
             <div class="question" id="question"></div> <br>
+<!-- Answer Buttons -->
             <div class="answer">
                 <div class="row">
                     <div class="col-6">
@@ -48,21 +52,24 @@
                     </div>
                 </div>
             </div>
+<!-- Results -->
         <div class="results-container" id="result-container">
             <p class="correct" id="correct">Correct!</p>
             <p class="wrong" id="wrong">Wrong!</p>
         </div>
     </div>
+<!-- Next Button -->
     <div class="next-container" id="next-container">
     <button class="next-button" id="next-button" type="button">NEXT</button>
     </div>
+<!-- End Game Container -->
     <div class="container" id="end-form">
         <h1>
             GAME OVER!
         </h1>
-        <p>
-            Thanks for playing!
-        </p>
+        <div class="paragraph">
+            <p>Thanks for playing!</p>
+        </div>
         <br>
         <div id="end-score"></div>
     </div>
