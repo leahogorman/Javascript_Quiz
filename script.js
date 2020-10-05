@@ -165,22 +165,18 @@ if (currentQuestion === questions.length-1) {
         endContainer.style.display = "block";
         nextButton.style.display = "none";
         endScore.innerText = "Your Score: " + score;
+        var lastPlayer = "Last Player: " + localStorage.getItem("player");
+        document.getElementById("lastPlayer").innerText = lastPlayer
     })
 }
 };
 document.getElementById("score-button").onclick = function() {highScore()};
 function highScore(){
-    var players = JSON.parse(localStorage.getItem(newPlayer)) || []
-    var newPlayer = {
-        name = document.getElementById("highScore").value,
-        score = score
-}
-    localStorage.setItem(newPlayer, JSON.stringify(players));
-    console.log(newPlayer)
-}
 
-// High score to Local Storage Function
-
-// // scoreButton.addEventListener('click', function(){
-// // players.push(newPlayer)
-// localStorage.setItem(newPlayer , JSON.stringify(players))
+    var player = {
+        name : document.getElementById("highScore").value,
+        score : score
+    }
+    localStorage.setItem("player", player)
+    console.log("hithere", player)
+}
