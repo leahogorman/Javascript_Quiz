@@ -22,6 +22,7 @@ var timer = document.getElementById("timer");
 var score = 0;
 var endScore = document.getElementById("end-score")
 var scoreContainer = document.getElementById("score")
+var scoreButton = document.getElementById("score-button")
 
 // Questions Array
 var questions = [{
@@ -56,7 +57,8 @@ var questions = [{
 }]
 
 // Start Button Event
-startButton.addEventListener('click', function(){
+startButton.onclick = function() {startGame()};
+function startGame() {
     startContainer.style.display = "none";
     questionContainer.style.display = "block";
     currentQuestion = 0
@@ -74,12 +76,17 @@ startButton.addEventListener('click', function(){
         endScore.innerText = "Your Score: " + score
     }
 }
-});
-
+};
+function responseStyles(){
+    correct.style.display = "none"
+    wrong.style.display = "none"
+    nextButton.style.display = "none"
+}
 // Questions Functions
 function setNextQuestion(){
     showQuestion(questions[currentQuestion])
     showAnswers()
+    responseStyles()
     scoreContainer.innerText = "Score: " + score
     endGame()
 }
@@ -145,14 +152,11 @@ answerFour.addEventListener('click', function(){
     }
 });
 
-// Next Button Event
+// Next Button Function
 nextButton.addEventListener('click', function(){
     setNextQuestion(currentQuestion++)
-    correct.style.display = "none"
-    wrong.style.display = "none"
-    nextButton.style.display = "none"
+    responseStyles()
 });
-
 // End Game Function
 function endGame(){
 if (currentQuestion === questions.length-1) {
@@ -163,4 +167,20 @@ if (currentQuestion === questions.length-1) {
         endScore.innerText = "Your Score: " + score;
     })
 }
+};
+document.getElementById("score-button").onclick = function() {highScore()};
+function highScore(){
+    var players = JSON.parse(localStorage.getItem(newPlayer)) || []
+    var newPlayer = {
+        name = document.getElementById("highScore").value,
+        score = score
 }
+    localStorage.setItem(newPlayer, JSON.stringify(players));
+    console.log(newPlayer)
+}
+
+// High score to Local Storage Function
+
+// // scoreButton.addEventListener('click', function(){
+// // players.push(newPlayer)
+// localStorage.setItem(newPlayer , JSON.stringify(players))

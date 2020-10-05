@@ -122,9 +122,11 @@ p {
     border-radius: 20px;
 }
 .correct {
+    display: none;
     background-color: lime;
 }
 .wrong {
+    display: none;
 background-color: plum;
 }
 /* End Screen =============================================== */
